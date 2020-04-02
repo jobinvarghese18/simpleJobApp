@@ -52,7 +52,7 @@ class Application extends React.Component{
                    <br/>
                    <label htmlFor='job'>Applying for Job</label>
                    <select id='job' name='job' onChange={this.handleInput} defaultValue={this.state.job} >
-                       <option value='Front.End Developer' >Front.End Developer</option>
+                       <option value='Front-End Developer'>Front.End Developer</option>
                        <option value='Node.js Developer'>Node.js Developer</option>
                        <option value='MEAN Stack Developer'>MEAN Stack Developer</option>
                        <option value='FULL Stack Developer'>FullStack  Developer</option>

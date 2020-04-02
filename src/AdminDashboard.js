@@ -68,7 +68,23 @@ class AdminDashboard extends React.Component {
        .then((response)=>{
            console.log(response.data)
            const {staus} = response.data
-           this.setState({status})
+           
+           const uUser = response.data
+           console.log(uUser)
+           this.setState(prevState=>{
+                users:prevState.users.map(usr=>{
+              
+                   if(usr._id===uUser._id){
+                    
+                       return Object.assign({},usr,uUser)
+                       
+                   }
+                   else{
+                       return Object.assign({},usr)
+                   }
+               })
+              
+           })
        })
        .catch((err)=>{
            console.log(err)
@@ -78,7 +94,22 @@ class AdminDashboard extends React.Component {
         const status = "rejected"
         Axios.put(`http://dct-application-form.herokuapp.com/users/application-form/update/${_id}`,{status})
         .then((response)=>{
+            const uUser = response.data
             console.log(response.data)
+            this.setState(prevState=>{
+                users:prevState.users.map(usr=>{
+              
+                   if(usr._id===uUser._id){
+                    
+                       return Object.assign({},usr,uUser)
+                       
+                   }
+                   else{
+                       return Object.assign({},usr)
+                   }
+               })
+               
+           })
         })
         .catch((err)=>{
             console.log(err)
