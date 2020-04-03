@@ -71,7 +71,7 @@ class AdminDashboard extends React.Component {
            
            const uUser = response.data
            console.log(uUser)
-           this.setState(prevState=>{
+           this.setState(prevState=>({
                 users:prevState.users.map(usr=>{
               
                    if(usr._id===uUser._id){
@@ -84,7 +84,7 @@ class AdminDashboard extends React.Component {
                    }
                })
               
-           })
+           }))
        })
        .catch((err)=>{
            console.log(err)
@@ -96,7 +96,7 @@ class AdminDashboard extends React.Component {
         .then((response)=>{
             const uUser = response.data
             console.log(response.data)
-            this.setState(prevState=>{
+            this.setState(prevState=>({
                 users:prevState.users.map(usr=>{
               
                    if(usr._id===uUser._id){
@@ -109,7 +109,7 @@ class AdminDashboard extends React.Component {
                    }
                })
                
-           })
+           }))
         })
         .catch((err)=>{
             console.log(err)
