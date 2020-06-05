@@ -1,6 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
-import '../src/app.css'
+// import '../src/app.css'
 
 class Application extends React.Component{
     constructor(){
@@ -40,34 +40,55 @@ class Application extends React.Component{
     render(){
         
         return(
-            <div>
+            <div className='row'>
+                
+                <div className='col-md-6 offset-md-3'>
+                <h2>Job Application</h2>
                 <form onSubmit={this.handleSubmit}>
-                   <label htmlFor='userName'>FullName</label>
-                   <input type="text" name='userName' id='userName'onChange={this.handleInput} value={this.state.userName}/>
-                   <br/>
+                    <div className='form-group'>
+                    <label htmlFor='userName'>FullName</label>
+                   <input type="text" name='userName' id='userName'onChange={this.handleInput} value={this.state.userName}
+                   className='form-control'/>
+                    </div>
+                   
+                   <div className='form-group'>
                    <label htmlFor='email'>E-Mail</label>
-                   <input type='text' name='email' id='email' value={this.state.email} onChange={this.handleInput}/>
-                   <br/>
+                   <input type='text' name='email' id='email' value={this.state.email} onChange={this.handleInput}
+                   className='form-control'/>
+                   </div>
+                   
+                   <div className='form-group'>
                    <label htmlFor='contact'>Contact</label>
-                   <input type='text' name='contact' id='contact' value = {this.state.contact} onChange={this.handleInput}/>
-                   <br/>
+                   <input type='text' name='contact' id='contact' value = {this.state.contact} onChange={this.handleInput}
+                   className='form-control'/>
+                   </div>
+
+                   <div className='form-group'>
                    <label htmlFor='job'>Applying for Job</label>
-                   <select className="styled-select" id='job' name='job' onChange={this.handleInput} defaultValue={this.state.job} >
+                   <select className="styled-select" id='job' name='job' onChange={this.handleInput} defaultValue={this.state.job}
+                   className='form-control' >
                        <option value='Front-End Developer'>Front.End Developer</option>
                        <option value='Node.js Developer'>Node.js Developer</option>
                        <option value='MEAN Stack Developer'>MEAN Stack Developer</option>
                        <option value='FULL Stack Developer'>FullStack  Developer</option>
                    </select>
-                   <br/>
-                   <label htmlFor="experience">Experience</label>
-                   <input type='text' name='experience' id='experience' value = {this.state.experience} onChange={this.handleInput}/>
-                   <br/>
-                   <label htmlFor='skills'>Technical Skills</label>
-                   <input type='textarea' name='skills' id='skills' value ={this.state.skills} onChange={this.handleInput}/>
-                   <br/>
-                   <input type='submit' className="myButton" value='Send Application'/>
-                </form>
+                   </div>
 
+                   <div className='form-group'>
+                   <label htmlFor="experience">Experience</label>
+                   <input type='text' name='experience' id='experience' value = {this.state.experience} onChange={this.handleInput}
+                   className='form-control'/>
+                   </div>
+
+                   <div className='form-group'>
+                   <label htmlFor='skills'>Technical Skills</label>
+                   <input type='textarea' name='skills' id='skills' value ={this.state.skills} onChange={this.handleInput}
+                   className='form-control'/>
+                   </div>
+
+                   <input type='submit' className="btn btn-primary" value='Send Application'/>
+                </form>
+            </div>
             </div>
         )
     }

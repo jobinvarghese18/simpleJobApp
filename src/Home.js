@@ -8,7 +8,7 @@ import EmployeeDetails from './EmployeeDetails'
 function Home(props){
     return (
         <BrowserRouter>
-        <div>
+        <div  classNane='container'>
             <Route path='/' component = {Application} exact={true}/>
             <Route path='/admin' component={AdminDashboard}/>
             <Route path='/EmployeeDetails' component={EmployeeDetails}/>
